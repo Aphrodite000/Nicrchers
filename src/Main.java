@@ -6,7 +6,7 @@ public class Main {
         b[i]=b[i1];
         b[i1]=temp;
     }
-
+/*
     public static void main(String[] args) {
         Scanner input=new Scanner(System.in);
         String s=input.nextLine();
@@ -62,6 +62,15 @@ public class Main {
         System.out.println(sb);
 
     }
+
+ */
+
+
+
+
+
+
+
     public static void main(String[] args){
         Scanner input=new Scanner(System.in);
         while(input.hasNextInt()){

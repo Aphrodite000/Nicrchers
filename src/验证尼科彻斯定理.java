@@ -12,30 +12,31 @@ public class 验证尼科彻斯定理 {
         }
     }
 
+    /**
+     * 1的三次方=1;
+     * 2:3+5;  2*2-2+1=3
+     * 3:7+9+11;   3*3-3+1=7
+     * 4:13+15+17+19
+     * @param m
+     * @return
+     */
     private static String GetSequeOddNum(int m) {
-        StringBuilder str=new StringBuilder();
-        int nums=(int)Math.pow(m,3);
-        Queue<Integer> queue=new LinkedList<>();
-        int sums=0;
-        int i=0;
-        for(i=1;i<1000000;i+=2){
-            queue.offer(i);
-            if(queue.size()>m){
-                sums-=queue.poll();
-            }
-            sums+=i;
-            if(sums==sums){
-                break;
-            }
-        }
-        if(i<1000000){
-            while (!queue.isEmpty()){
-                str.append(queue.poll());
-                if(!queue.isEmpty()){
-                    str.append("+");
-                }
+        //等差数列首项
+        int a1=m*m-m+1;
+        StringBuilder sb=new StringBuilder();
+        sb.append(a1);
+        sb.append("+");
+        for(int i=0;i<=m-2;i++){
+            if(i==m-2){
+                a1+=2;
+                sb.append(a1);
+            }else{
+            a1+=2;
+            sb.append(a1);
+            sb.append("+");
             }
         }
-        return str.toString();
+        String s=sb.toString();
+        return s;
     }
 }
